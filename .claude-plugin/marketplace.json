@@ -1,0 +1,13 @@
+{
+  "name": "parlonsweb",
+  "owner": {
+    "name": "ParlonsWeb"
+  },
+  "plugins": [
+    {
+      "name": "learn",
+      "source": "./plugins/learn",
+      "description": "Reviews the current session and saves anything worth keeping to the auto-memory system."
+    }
+  ]
+}

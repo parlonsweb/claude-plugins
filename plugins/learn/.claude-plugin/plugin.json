@@ -1,0 +1,6 @@
+{
+  "name": "learn",
+  "displayName": "Learn",
+  "description": "Reviews the current session and saves anything worth keeping to the auto-memory system: corrections, confirmed preferences, user context, project decisions, and external references.",
+  "author": { "name": "Bertrand Retif, Alexandre Leveque" }
+}
