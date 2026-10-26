@@ -13,7 +13,7 @@ Run it at the end of a session or any time the conversation has surfaced somethi
 - **Project context** — decisions and their reasons, deadlines, constraints, architectural choices
 - **References** — pointers to external systems (cloud console projects, GitOps apps, password-manager vaults, GitHub repos, dashboards)
 
-It reads your existing memory index first, updates entries that already cover the topic, and only creates new files for genuinely new information. At the end it reports what was saved.
+It reads your existing memory index first, updates entries that already cover the topic, and only creates new files for genuinely new information. Facts that hold across all your projects are proposed as additions to `~/.claude/CLAUDE.md` instead, since auto-memory is per project; nothing is written there without your approval. At the end it reports what was saved.
 
 ## Install
 

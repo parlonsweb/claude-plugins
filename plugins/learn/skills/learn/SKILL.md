@@ -54,7 +54,14 @@ Skip anything that can be derived by reading the current files or running a git 
 
 3. **Deduplicate.** For each candidate, check the index. If an existing memory covers the topic, read it and decide whether to update it or skip the candidate. Never create a second file for a topic that already has one. Updating means *reconciling*: delete the lines this session superseded, so a file never holds two generations of the same claim.
 
-4. **Write.** Create or update the memory files and the index entries.
+4. **Choose the scope.** Auto-memory is stored per working directory: a memory saved while working in one repo is invisible from its sibling repos. For each candidate, decide where it belongs:
+
+   - **Project memory** (the default): facts about this project — its decisions, constraints, references.
+   - **Global instructions**: facts that hold in every project — user preferences, collaboration feedback, conventions shared across repos. These belong in `~/.claude/CLAUDE.md` (or the file it is symlinked from or imports). Never write there silently: show the exact lines you would add and wait for the user's approval. If it is a symlink into a git repo, say which repo so the user can commit the change.
+
+   When unsure, keep it in project memory.
+
+5. **Write.** Create or update the memory files and the index entries.
 
    Each memory file has this shape:
 
@@ -78,8 +85,8 @@ Skip anything that can be derived by reading the current files or running a git 
 
    Keep each file under 4 KB. If one goes over, split out the distinct fact or re-summarise the file back down in this same pass — never append and move on.
 
-5. **Report.** One line per saved or updated item, with its type and summary.
+6. **Report.** One line per saved or updated item, with its type, scope and summary. List proposed global instructions separately, as pending until the user approves them.
 
    "Nothing worth keeping this session" is a valid outcome — say so plainly and write nothing.
 
-6. **Prune, then check the budget.** Delete the memories this session proved wrong, and the ones describing completed work with no forward value — the file *and* its index line. Then, if `MEMORY.md` is over ~120 entries or ~15 KB, say so and recommend a consolidation pass. Do not start one inside a capture pass.
+7. **Prune, then check the budget.** Delete the memories this session proved wrong, and the ones describing completed work with no forward value — the file *and* its index line. Then, if `MEMORY.md` is over ~120 entries or ~15 KB, say so and recommend a consolidation pass. Do not start one inside a capture pass.
