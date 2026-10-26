@@ -56,6 +56,24 @@ Skip anything that can be derived by reading the current files or running a git 
 
 4. **Write.** Create or update the memory files and the index entries.
 
+   Each memory file has this shape:
+
+   ```markdown
+   ---
+   name: feedback-close-idle-agents
+   description: One line, specific enough to decide relevance without opening the file
+   metadata:
+     type: feedback
+   ---
+
+   The fact itself. For feedback and project memories, follow it with:
+   **Why:** the reason the user gave, or the incident behind it.
+   **How to apply:** when this should change what you do.
+   Link related memories with [[their-name]].
+   ```
+
+   `type` is one of `user`, `feedback`, `project`, `reference`. Each index entry in `MEMORY.md` is one line: `- [Title](file.md) — hook`. Never put memory content in the index.
+
    Name each file `<type>_<snake_case_slug>.md`, so the type is visible without opening it. Do not mix the three forms: the filename is `snake_case`, while the `name:` slug and every `[[link]]` are `hyphen-case`. `feedback_close_idle_agents.md` carries `name: feedback-close-idle-agents` and is linked as `[[feedback-close-idle-agents]]` — a hyphen/underscore mismatch breaks recall silently.
 
    Keep each file under 4 KB. If one goes over, split out the distinct fact or re-summarise the file back down in this same pass — never append and move on.
