@@ -33,7 +33,7 @@ Go through the conversation from the beginning. For each exchange, ask whether i
 - Ongoing work or initiatives the user mentioned — keep the mechanism and the reason as prose, and confine anything that can change (ticket, PR, deploy state) to a single trailing block: `**Status (as of YYYY-MM-DD, re-verify before quoting):** …`. Never let a status snapshot be the whole memory.
 
 **References**
-- External systems and where to find things in them (Linear project names, Grafana dashboards, Slack channels, Confluence spaces)
+- External systems and where to find things in them (a cloud console project, a GitOps app, a password-manager vault and item, a GitHub org or repo, a monitoring dashboard)
 
 ## What NOT to save
 
